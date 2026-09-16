@@ -1,0 +1,329 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+
+/* =========================
+   ROOT
+   THIS FIXES THE LEFT SIDE
+========================= */
+
+#root {
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+  min-height: 100vh;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  color: #164e70;
+
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 255, 255, 0.95),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(255, 255, 255, 0.75),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(125, 211, 252, 0.5),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #e8f8ff,
+      #c7e9fa,
+      #9bc7f5
+    );
+}
+
+
+/* =========================
+   WEATHER CARD
+========================= */
+
+.weather-card {
+  position: relative;
+
+  width: 430px;
+  max-width: calc(100vw - 32px);
+
+  min-height: 330px;
+
+  padding: 60px 35px 45px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  border-radius: 32px;
+
+  /* Glass */
+  background: rgba(255, 255, 255, 0.45);
+
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+
+  border: 1px solid rgba(255, 255, 255, 0.75);
+
+  box-shadow:
+    0 30px 70px rgba(30, 100, 160, 0.22),
+    0 10px 30px rgba(30, 100, 160, 0.12),
+    inset 0 1px 2px rgba(255, 255, 255, 0.9);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =========================
+   CARD HOVER
+========================= */
+
+.weather-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 40px 80px rgba(30, 100, 160, 0.25),
+    0 15px 35px rgba(30, 100, 160, 0.15),
+    inset 0 1px 2px rgba(255, 255, 255, 0.95);
+}
+
+
+/* =========================
+   GLASS SHINE
+========================= */
+
+.weather-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 50%;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   SUN
+========================= */
+
+.weather-card::after {
+  content: "☀️";
+
+  position: absolute;
+
+  top: 22px;
+  right: 28px;
+
+  font-size: 48px;
+
+  z-index: 3;
+
+  filter: drop-shadow(
+    0 5px 10px rgba(245, 158, 11, 0.25)
+  );
+
+  animation: sunMove 4s ease-in-out infinite;
+}
+
+@keyframes sunMove {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-6px) rotate(10deg);
+  }
+}
+
+
+/* =========================
+   CLOUD DECORATION
+========================= */
+
+.weather-card {
+  background-image:
+    radial-gradient(
+      ellipse 70px 40px at 18% 82%,
+      rgba(255, 255, 255, 0.75),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 55px 35px at 30% 78%,
+      rgba(255, 255, 255, 0.7),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 90px 45px at 23% 87%,
+      rgba(255, 255, 255, 0.65),
+      transparent 70%
+    ),
+    linear-gradient(
+      rgba(255, 255, 255, 0.45),
+      rgba(255, 255, 255, 0.45)
+    );
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.weather-card h1 {
+  position: relative;
+  z-index: 5;
+
+  margin-bottom: 30px;
+
+  font-size: 28px;
+
+  font-weight: 600;
+
+  line-height: 1.3;
+
+  letter-spacing: -0.5px;
+
+  color: #164e70;
+}
+
+
+/* =========================
+   TEMPERATURE
+========================= */
+
+.weather-card h2 {
+  position: relative;
+  z-index: 5;
+
+  font-size: 78px;
+
+  font-weight: 300;
+
+  line-height: 1;
+
+  letter-spacing: -5px;
+
+  color: #075985;
+
+  text-shadow:
+    0 4px 15px rgba(255, 255, 255, 0.9),
+    0 8px 25px rgba(14, 116, 144, 0.15);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .weather-card {
+    width: calc(100vw - 32px);
+
+    min-height: 300px;
+
+    padding: 55px 24px 40px;
+
+    border-radius: 28px;
+  }
+
+  .weather-card h1 {
+    font-size: 24px;
+
+    margin-bottom: 25px;
+  }
+
+  .weather-card h2 {
+    font-size: 60px;
+
+    letter-spacing: -3px;
+  }
+
+  .weather-card::after {
+    top: 18px;
+    right: 20px;
+
+    font-size: 40px;
+  }
+}
+
+
+/* =========================
+   SMALL PHONE
+========================= */
+
+@media (max-width: 380px) {
+  .weather-card {
+    min-height: 270px;
+
+    padding: 50px 18px 35px;
+  }
+
+  .weather-card h1 {
+    font-size: 21px;
+  }
+
+  .weather-card h2 {
+    font-size: 50px;
+  }
+}
