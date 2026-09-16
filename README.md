@@ -1,16 +1,26 @@
-# React + Vite
+# 🌤️ React Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple weather app built with React that shows the current temperature of Coimbatore using the Open-Meteo API.
 
-Currently, two official plugins are available:
+## 🔗 Live Demo : https://frabjous-selkie-42d263.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📸 Screenshot
+<img width="2880" height="1278" alt="image" src="https://github.com/user-attachments/assets/3ad81aae-0df9-49bc-a4d5-7ee6e6885d12" />
 
-## React Compiler
+## 🛠️ Built With
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* React
+* JavaScript
+* CSS
+* Open-Meteo API
 
-## Expanding the ESLint configuration
+## 📚 Concepts Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* `useState`
+* `useEffect`
+* `fetch()`
+* `async/await`
+* API calls
+
+
+
